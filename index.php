@@ -12,27 +12,63 @@
 <body>
     <div class="container">
         <div class="row mt-4">
-            <div class="col-lg-12">
+            <div class="col-lg-12 d-flex justify-content-between align-itens-center">
                 <div>
                     <h4>Listar Usuários</h4>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#cadUsuarioModal">
+                        Cadastrar usuário
+                    </button>
+                </div>
+            </div>
+            <hr>
+
+            <span id="msgAlerta"></span>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div class="modal fade" id="cadUsuarioModal" tabindex="-1" aria-labelledby="#cadUsuarioModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="cadUsuarioModalLabel">Cadastro de usuário</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="cad-usuario-form">
+                            <span id="msgAlertaErroCad"></span>
+                            <div class="mb-3">
+                                <label for="nome" class="col-form-label">Nome:</label>
+                                <input type="text" name="nome" class="form-control" id="nome" placeholder="Informe seu nome completo">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="col-form-label">E-mail:</label>
+                                <input type="text" name="email" class="form-control" id="email" placeholder="Informe o seu endereço de e-mail">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Fechar</button>
+                                <input type="submit" class="btn btn-success btn-sm" id="cad-usuario-btn" value="Cadastrar" />
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="js/custom.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="js/custom.js"></script>
 </body>
 
 </html>
