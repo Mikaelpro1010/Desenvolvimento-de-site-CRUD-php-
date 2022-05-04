@@ -7,7 +7,17 @@ $result_usuarios = $conn->prepare($query_usuarios);
 $result_usuarios->execute();
 
 
-$dados = "";
+$dados = "<div class = 'table-responsive'>
+            <table class='table table-striped'>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>";
 
 while ($row_usuario = $result_usuarios->fetch(PDO::FETCH_ASSOC)) {
     $dados .= "<tr>
@@ -17,5 +27,9 @@ while ($row_usuario = $result_usuarios->fetch(PDO::FETCH_ASSOC)) {
                 <td>Ações</td>
             </tr>";
 }
+
+$dados .=   "</tbody>
+        </table>
+    </div>";
 
 echo $dados;

@@ -1,11 +1,11 @@
-const tbody = document.querySelector("tbody");
+const tbody = document.querySelector(".listar-usuarios");
 const Form = document.getElementById("cad-usuario-form");
 const msgAlertaErroCad = document.getElementById("msgAlertaErroCad");
 const msgAlerta = document.getElementById("msgAlerta");
 const cadModal = new bootstrap.Modal(document.getElementById("cadUsuarioModal"));
 
-const listarUsuarios = async() => {
-    const dados = await fetch("./list.php");
+const listarUsuarios = async(pagina) => {
+    const dados = await fetch("./list.php?pagina="+ pagina);
     const resposta = await dados.text();
     tbody.innerHTML = resposta;
 }

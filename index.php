@@ -13,30 +13,17 @@
     <div class="container">
         <div class="row mt-4">
             <div class="col-lg-12 d-flex justify-content-between align-itens-center">
-                <div>
-                    <h4>Listar Usuários</h4>
-                </div>
-                <div>
-                    <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#cadUsuarioModal">
-                        Cadastrar usuário
-                    </button>
-                </div>
+                <h4>Listar Usuários</h4>
+                <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#cadUsuarioModal">
+                    Cadastrar usuário
+                </button>
             </div>
             <hr>
-
+            
             <span id="msgAlerta"></span>
+            <span class="listar-usuarios"></span>
 
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+
         </div>
 
         <div class="modal fade" id="cadUsuarioModal" tabindex="-1" aria-labelledby="#cadUsuarioModalLabel" aria-hidden="true">
