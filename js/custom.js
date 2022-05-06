@@ -14,25 +14,32 @@ listarUsuarios(1);
 
 Form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    
-    const dadosForm = new FormData(Form);
-    dadosForm.append("add", 1);
 
     document.getElementById("cad-usuario-btn").value = "Salvando...";
 
-    const dados = await fetch("cadastrar.php",{
+    if(document.getElementById("nome").value === ""){
+        msgAlertaErroCad.innerHTML = '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo nome 1!</div>';
+    } else if(document.getElementById("email").value === ""){
+        msgAlertaErroCad.innerHTML = '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo email 1!</div>';
+    } else {
+        const dadosForm = new FormData(Form);
+        dadosForm.append("add", 1);
+
+        const dados = await fetch("cadastrar.php",{
         method: "POST",
         body: dadosForm,
     })
 
-    const resposta = await dados.json();
-    if(resposta['erro']){
-        msgAlertaErroCad.innerHTML = resposta['msg'];
-    }else{
-        msgAlerta.innerHTML = resposta['msg'];
-        Form.reset();
-        cadModal.hide();
-        listarUsuarios(1);
+        const resposta = await dados.json();
+        if(resposta['erro']){
+            msgAlertaErroCad.innerHTML = resposta['msg'];
+        }else{
+            msgAlerta.innerHTML = resposta['msg'];
+            Form.reset();
+            cadModal.hide();
+            listarUsuarios(1);
+        }
     }
+
     document.getElementById("cad-usuario-btn").value = "Cadastrar";
 });
