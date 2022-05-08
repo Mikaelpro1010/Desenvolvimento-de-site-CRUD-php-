@@ -10,6 +10,7 @@ const listarUsuarios = async(pagina) => {
     tbody.innerHTML = resposta;
 }
 
+
 listarUsuarios(1);
 
 Form.addEventListener("submit", async (e) => {
@@ -43,3 +44,9 @@ Form.addEventListener("submit", async (e) => {
 
     document.getElementById("cad-usuario-btn").value = "Cadastrar";
 });
+
+async function visUsuario(id){
+    const dados = await fetch('visualizar.php?id= '+id);
+    const resposta = await dados.json();
+    console.log(resposta)
+}
