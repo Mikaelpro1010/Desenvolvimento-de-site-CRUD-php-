@@ -27,11 +27,15 @@ $dados = "<div class = 'table-responsive'>
                 <tbody>";
 
 while ($row_usuario = $result_usuarios->fetch(PDO::FETCH_ASSOC)) {
+    extract($row_usuario);
     $dados .= "<tr>
-                <td>" . $row_usuario["id"] . "</td>
-                <td>" . $row_usuario["nome"] . "</td>
-                <td>" . $row_usuario["email"] . "</td>
-                <td>Ações- $pagina</td>
+            <td>$id </<td>
+            <td>$nome </<td>
+            <td>$email </<td>    
+            <td>
+            <button id='$id' class='btn btn-primary btn-sm'
+            onclick='visUsuario($id)'>Visualizar</button>
+            </td>
             </tr>";
 }
 
