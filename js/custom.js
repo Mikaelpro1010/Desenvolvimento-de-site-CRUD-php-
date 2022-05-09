@@ -59,6 +59,8 @@ async function visUsuario(id){
         document.getElementById("idUsuario").innerHTML = resposta['dados'].id;
         document.getElementById("nomeUsuario").innerHTML = resposta['dados'].nome;
         document.getElementById("emailUsuario").innerHTML = resposta['dados'].email;
+        document.getElementById("sexoUsuario").innerHTML = resposta['dados'].sexo;
+        document.getElementById("idadeUsuario").innerHTML = resposta['dados'].idade;
 
     }
 }
