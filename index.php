@@ -41,6 +41,14 @@
                                 <label for="email" class="col-form-label">E-mail:</label>
                                 <input type="text" name="email" class="form-control" id="email" placeholder="Informe o seu endereço de e-mail">
                             </div>
+                            <div class="mb-3">
+                                <label for="sexo" class="col-form-label">Sexo</label>
+                                <input type="text" name="sexo" class="form-control" id="sexo" placeholder="Informe o seu sexo">
+                            </div>
+                            <div class="mb-3">
+                                <label for="idade" class="col-form-label">Idade</label>
+                                <input type="text" name="idade" class="form-control" id="idade" placeholder="Informe a sua idade">
+                            </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Fechar</button>
                                 <input type="submit" class="btn btn-success btn-sm" id="cad-usuario-btn" value="Cadastrar" />
@@ -69,6 +77,12 @@
 
                                 <dt class="col-sm-3">E-mail</dt>
                                 <dd class="col-sm-9"><span id="emailUsuario"></span></dd>
+
+                                <dt class="col-sm-3">Sexo</dt>
+                                <dd class="col-sm-9"><span id="sexoUsuario"></span></dd>
+
+                                <dt class="col-sm-3">Idade</dt>
+                                <dd class="col-sm-9"><span id="idadeUsuario"></span></dd>
                             </dl>
                     </div>
                 </div>
