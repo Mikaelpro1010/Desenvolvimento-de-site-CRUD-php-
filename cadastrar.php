@@ -11,10 +11,12 @@ elseif (empty($dados['email'])){
     $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo email!</div>'];
 } 
 else{
-    $query_usuario = "INSERT INTO usuarios (nome, email) VALUES(:nome, :email)";
+    $query_usuario = "INSERT INTO usuarios (nome, email, sexo, idade) VALUES(:nome, :email, :sexo, :idade)";
     $cad_usuario = $conn->prepare($query_usuario);
     $cad_usuario->bindParam(':nome', $dados['nome']);
     $cad_usuario->bindParam(':email', $dados['email']);
+    $cad_usuario->bindParam(':sexo', $dados['sexo']);
+    $cad_usuario->bindParam(':idade', $dados['idade']);
     $cad_usuario->execute();
 
     if ($cad_usuario->rowCount()) {
