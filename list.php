@@ -21,6 +21,8 @@ $dados = "<div class = 'table-responsive'>
                         <th>ID</th>
                         <th>Nome</th>
                         <th>E-mail</th>
+                        <th>Sexo</th>
+                        <th>Idade</th>       
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -31,7 +33,9 @@ while ($row_usuario = $result_usuarios->fetch(PDO::FETCH_ASSOC)) {
     $dados .= "<tr>
             <td>$id </<td>
             <td>$nome </<td>
-            <td>$email </<td>    
+            <td>$email </<td>   
+            <td>$sexo</td>
+            <td>$idade</td>
             <td>
             <button id='$id' class='btn btn-primary btn-sm'
             onclick='visUsuario($id)'>Visualizar</button>
